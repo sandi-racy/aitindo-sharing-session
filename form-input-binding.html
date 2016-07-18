@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id="form-input-binding">
+			<p>Message is: {{ message }}</p>
+			<div>
+				<input type="text" v-model="message" />
+			</div>
+			<div>
+				<!-- Param attribute lazy berfungsi untuk mengganti behavior sync menjadi change event -->
+				<input type="text" v-model="message" lazy />
+			</div>
+			<div>
+				<!-- Param attribute debounce berfungsi untuk mengatur minimal delay setiap keystroke -->
+				<input type="text" v-model="message" debounce="1000" />
+			</div>
+		</div>
+
+		<script src="bower_components/vue/dist/vue.min.js"></script>
+		<script>
+			new Vue({
+			  el: '#form-input-binding',
+			  data: {
+			  	message: 'Hello World'
+			  }
+			});
+		</script>
+	</body>
+</html>

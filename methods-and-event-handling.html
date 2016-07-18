@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id="methods-and-event-handling">
+			<button v-on:click="greet">Greet</button>
+		</div>
+
+		<script src="bower_components/vue/dist/vue.min.js"></script>
+		<script>
+			new Vue({
+			  el: '#methods-and-event-handling',
+			  methods: {
+			  	greet: function(event){
+			  		alert('Hello World');
+			  		alert(event.target.tagName);
+			  	}
+			  }
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id="directive">
+			<p v-show="greeting">Hello!</p>
+			<div>
+				<a v-bind:href="url">URL</a>
+			</div>
+			<button v-on:click="doSomething">Do Something</button>
+			<div>
+				<a :href="url">URL</a>
+			</div>
+			<button @click="doSomething">Do Something</button>
+		</div>
+
+		<script src="bower_components/vue/dist/vue.min.js"></script>
+		<script>
+			new Vue({
+			  el: '#directive',
+			  data: {
+			    greeting: false,
+			    url: 'http://www.aitindo.com'
+			  },
+			  methods: {
+			  	doSomething: function(){
+			  		alert('Do Something');
+			  	}
+			  }
+			});
+		</script>
+	</body>
+</html>

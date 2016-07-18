@@ -1,0 +1,18 @@
+{
+  "name": "aitindo-sharing-session",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sandi Rosyandi",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "vue": "^1.0.26",
+    "vue-router": "^0.7.13"
+  },
+  "description": ""
+}

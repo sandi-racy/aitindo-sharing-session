@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id="data-binding-syntax">
+			<div>Message: {{ message }}</div>
+			<div>Raw Message: {{{ rawMessage }}}</div>
+			<div>Binding Expression: {{ number + 1 }} </div>
+			<div>Message: {{ message | lowercase }}</div>
+		</div>
+
+		<script src="bower_components/vue/dist/vue.min.js"></script>
+		<script>
+			new Vue({
+			  el: '#data-binding-syntax',
+			  data: {
+			    message: 'Hello Vue.js!',
+			    number: 1,
+			    rawMessage: '<b>Hello Vue.js!</b>'
+			  }
+			});
+		</script>
+	</body>
+</html>

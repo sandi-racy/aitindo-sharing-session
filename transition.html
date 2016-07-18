@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="bower_components/animate.css/animate.min.css" />
+		<style>
+			.fade-transition {
+				opacity: 1;
+			  	transition: all 1s ease-in-out;
+			}
+
+			.fade-enter, .fade-leave {
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="greet">
+			<h1 v-show="greet" transition="fade">Hello World</h1>
+			<button @click="greet = !greet">Toggle</button>
+			<h1 v-show="ok" class="animated" transition="bounce">Watch me bounce</h1>
+			<button @click="ok = !ok">Toggle</button>
+			<h1 v-show="show" transition="slide">Transition JS</h1>
+			<button @click="show = !show">Toggle</button>
+		</div>
+
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/vue/dist/vue.min.js"></script>
+		<script>
+			Vue.transition('bounce', {
+			  enterClass: 'bounceInLeft',
+			  leaveClass: 'bounceOutRight'
+			});
+
+			Vue.transition('slide', {
+  				css: false,
+  				enter: function (el, done) {
+  					$(el).slideDown();
+  				},
+  				leave: function (el, done) {
+  					$(el).slideUp();
+  				}
+  			});
+
+			new Vue({
+			  el: '#greet',
+			  data: {
+			    greet: true,
+			    ok: true,
+			    show: true
+			  }
+			});
+		</script>
+	</body>
+</html>

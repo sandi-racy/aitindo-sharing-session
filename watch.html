@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id="watch">
+			<p>First Name = {{ name.first }}, Last Name = {{ name.last }}, Full Name = {{ name.full }}</p>
+			<input type="text" v-model="name.first" />
+			<input type="text" v-model="name.last" />
+		</div>
+
+		<script src="bower_components/vue/dist/vue.min.js"></script>
+		<script>
+			var vm = new Vue({
+			  el: '#watch',
+			  data: {
+			    name: {
+			    	first: 'Sandi',
+			    	last: 'Rosyandi',
+			    	full: 'Sandi Rosyandi'
+			    }
+			  }
+			});
+
+			vm.$watch('name.first', function (val) {
+  				this.name.full = val + ' ' + this.name.last;
+			});
+
+			vm.$watch('name.last', function (val) {
+  				this.name.full = this.name.first + ' ' + val;
+			});
+		</script>
+	</body>
+</html>

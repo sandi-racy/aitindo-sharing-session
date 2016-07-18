@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<!-- Hello World -->
+		<div id="hello-world">
+		  {{ message }}
+		</div>
+
+		<!-- Render a List -->
+		<div id="render-a-list">
+		  <ul>
+		    <li v-for="todo in todos">
+		      {{ todo.text }}
+		    </li>
+		  </ul>
+		</div>
+
+		<!-- Handle User Input -->
+		<div id="handle-user-input">
+		  <button v-on:click="helloWorld">Hello World</button>
+		</div>
+
+		<script src="bower_components/vue/dist/vue.min.js"></script>
+		<script>
+			// Hello World
+			new Vue({
+			  el: '#hello-world',
+			  data: {
+			    message: 'Hello World!'
+			  }
+			});
+
+			// Render a List
+			new Vue({
+			  el: '#render-a-list',
+			  data: {
+			    todos: [
+			      { text: 'Learn JavaScript' },
+			      { text: 'Learn Vue.js' },
+			      { text: 'Build Something Awesome' }
+			    ]
+			  }
+			});
+
+			// Handle User Input
+			new Vue({
+			  el: '#handle-user-input',
+			  methods: {
+			    helloWorld: function () {
+			      alert('Hello World');
+			    }
+			  }
+			});
+		</script>
+	</body>
+</html>

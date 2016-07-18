@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id="computed-property">
+			<p>First Name = {{ name.first }}, Last Name = {{ name.last }}, Full Name = {{ fullName }}</p>
+			<input type="text" v-model="name.first" />
+			<input type="text" v-model="name.last" />
+		</div>
+
+		<script src="bower_components/vue/dist/vue.min.js"></script>
+		<script>
+			new Vue({
+			  el: '#computed-property',
+			  data: {
+			    name: {
+			    	first: 'Sandi',
+			    	last: 'Rosyandi'
+			    }
+			  },
+			  computed: {
+			  	fullName: function(){
+			  		return this.name.first + ' ' + this.name.last;
+			  	}
+			  }
+			});
+		</script>
+	</body>
+</html>
