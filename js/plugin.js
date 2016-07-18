@@ -3,14 +3,8 @@ var VueRouter = require('vue-router')
 
 Vue.use(VueRouter)
 
-var Name = Vue.extend({
-	template: '<h1>Hello World</h1>'
-});
-
-Vue.component('name', Name);
-
 var Foo = Vue.extend({
-    template: '<name></name><p>This is foo 2!</p><router-view></router-view>'
+    template: '<p>This is foo!</p>'
 })
 
 var Bar = Vue.extend({
@@ -23,14 +17,10 @@ var router = new VueRouter()
 
 router.map({
     '/foo': {
-        component: Foo,
-        subRoutes: {
-	      '/bar': {
-	        // Bar will be rendered inside Foo's <router-view>
-	        // when /foo/bar is matched
-	        component: Bar
-	      }
-	    }
+        component: Foo
+    },
+    '/bar': {
+    	component: Bar
     }
 })
 
